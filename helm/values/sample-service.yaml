@@ -1,0 +1,11 @@
+# sample-service overrides
+image:
+  tag: "latest"
+
+ingress:
+  path: /sample-service
+  groupOrder: 10
+
+healthCheck:
+  path: /health
+  port: 8080

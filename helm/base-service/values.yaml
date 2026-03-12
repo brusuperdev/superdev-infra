@@ -1,0 +1,29 @@
+replicaCount: 1
+
+image:
+  repository: 605893374669.dkr.ecr.us-east-1.amazonaws.com/bruviti-ai-superdev-central
+  tag: "latest"
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+ingress:
+  enabled: true
+  host: apps.brusuperdev.com
+  path: /
+  certificateArn: arn:aws:acm:us-east-1:605893374669:certificate/1904e184-d30f-4738-9dfb-463fb726f621
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 250m
+    memory: 256Mi
+
+healthCheck:
+  path: /health
+  port: 8080
