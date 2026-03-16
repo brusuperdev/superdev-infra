@@ -4,7 +4,7 @@ kind: ClusterConfig
 metadata:
   name: bruviti-ai-superdev-eks
   region: us-east-1
-  version: "1.31"
+  version: "1.35"
 
 vpc:
   id: vpc-0a05f0eb7f3518554
